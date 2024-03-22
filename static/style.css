@@ -1,0 +1,344 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(/static/font/Roboto-Light.ttf);
+}
+@font-face{
+    font-family: "Roboto medium";
+    src: url(/static/font/Roboto-Medium.ttf);
+}
+@font-face {
+    font-family: "Alice";
+    src: url(/static/font/Alice-Regular.ttf);
+}
+
+p {
+    font-family: "Roboto";
+    font-weight: 300;
+    strong {
+        font-family: "Roboto medium";
+    }
+}
+nav {
+    padding-inline: 3vw;
+    padding-top: 60px;
+    padding-bottom: 50px;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap:wrap;
+    background-color:white;
+}
+.home-icon {
+    display: block;
+    max-height: 113px;
+    max-width: 100%;
+}
+body {
+    margin:0px;
+}
+.desktop-links {
+    padding-top:30px;
+    text-align:right;
+    font-family:'Roboto';
+    font-size: 17px;
+    font-weight: 300;
+    text-underline-offset: 10px;
+    li {
+        display: inline-block;
+        padding-inline: 10px;
+        a {
+            text-decoration:none;
+            color:black;
+        }
+    }
+}
+#contact-button {
+    font-size:16px;
+    background: black; 
+    color: white; 
+    padding:22px 30px;
+    text-decoration: none;
+}
+#contact-button:hover {
+    background: rgb(50, 50, 50);
+}
+.dropdown-content {
+    display: none;
+    position: absolute; right:0px;
+    z-index: 1;
+    padding-top:10px;
+    background:white;
+
+    li {
+        width: 400px;
+        line-height:28px;
+        text-align: right;
+        white-space:nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-underline-offset: 6px;
+    }
+}
+.dropdown {
+    position: relative;
+    display: inline;
+}
+.dropdown:hover {
+    cursor:pointer;
+    .dropdown-content{
+        display: block;
+    }
+}
+.hamburger-icon {
+    margin-inline-start:auto;
+    font-size:50px;
+    display: none;
+    #hamburger-close {
+        font-family: "Roboto";
+        font-weight:300;
+        display: none;
+    }
+}
+.hamburger-links {
+    display: none;
+    color: black;
+    font-size:calc(15px + 2vw);
+    a {
+        color: black;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-icon {
+        height: calc(40px + 5vw);
+    }
+
+    .desktop-links{
+        display: none;
+    }
+
+    .hamburger-links {
+        display:block;
+        visibility:hidden;
+    }
+    
+    .hamburger-icon {
+        display: block;
+        text-decoration: none;
+        color:black;
+        text-align:right;
+        cursor: pointer;
+    }
+
+    .hamburger-icon.active {
+        #hamburger-open {
+            display: none;
+        }
+        #hamburger-close {
+            display: block;
+        }
+    }
+
+    .page-content.active {
+        display:none;
+    }
+    #hamburger-nav-links {
+        visibility:hidden;
+        position:fixed;
+        left: -30%;
+        transition: left 0.5s ease-in;
+
+    }
+    
+    #hamburger-nav-links.active {
+        visibility:visible;
+        position: fixed;
+        text-align:center;
+        margin-inline: auto;
+        top: 35%;
+        left: 20%;
+        width: 100%;
+
+        cursor: pointer;
+        li {
+            display:flex;
+            padding:10px;
+        }
+    }
+}
+
+.home-image-wrapper {
+    width:100vw;
+    height: calc(50vh + 25vw);
+    position: relative;
+    overflow: hidden;
+}
+
+.home-image {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Ensure the background image covers the entire container */
+    
+    a{
+        color:rgb(235, 235, 235);
+        font-family:"Alice";
+        font-size: calc(25px + 4vw);
+        
+    }    
+}
+
+.draping-background {
+    background-image: url("/static/\(1\)Draping.jpg");
+    background-position: 50% 60%;
+}
+
+.knitting-background {
+    background-image: url("/static/\(2\)Knitting.jpg");
+    background-position: 50% 50%;
+}
+
+.craftwork-background {
+    background-image: url("/static/\(3\)craftwork.jpg");
+    background-position: 50% 50%;
+    
+}
+
+.custom-background {
+    background-image: url("/static/\(4\)custom-design.jpg");
+    background-position: 50% 60%;
+}
+
+.theatrical-background {
+    background-image: url("/static/\(5\)Theatrical.jpg");
+    background-position: 50% 40%;
+    margin-bottom:2vh;
+}
+
+.home-links {
+    margin-inline: 3vw;
+    margin-top: 2vh;
+}
+
+/* Bio */
+.bio-background-wrapper {
+    width:100vw;
+    height: 300px;
+    position: relative;
+    margin-bottom:100px;
+    overflow: hidden;
+}
+
+.fabric-rolls {
+    background-image: url("/static/Bio/fabric-rolls.jpeg");
+    
+    background-position: 50% 55%;
+    p {
+        font-family:'Alice', serif;
+        font-size: calc(15px + 2vw);
+        color: white;
+    }
+}
+
+/* .about-page is used for "bio" and "about" page */
+.about-page {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bio-image, .bio-text {
+    flex: 1; /* Both elements take up equal space */
+    min-width: 50%; /* Each element takes up at least half of the container width */
+    box-sizing: border-box;
+    padding: 3vw;
+}
+
+.bio-text{
+ 
+    margin-top:5vw;
+    p {
+        line-height: 25px;
+        margin-right: 10vw;
+    }
+    
+    h2 {
+        font-family: "Alice", serif;
+    }
+    #bio-skills {
+
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+.bio-image {
+    width:97%
+}
+
+/* Resume */
+.resume-image {
+    border-top-left-radius: 500px;
+    border-top-right-radius: 500px;
+    width: 100%;
+}
+#resume-text {
+    h2 {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .bio-image,
+    .bio-text {
+        flex-basis: 100%; /* Each element takes up full width on smaller screens */
+        margin-top: 0px;
+        padding: 1vw;
+    }
+    .about-page {
+        margin-inline: 3vw;
+        margin-bottom:20px;
+    }
+}
+
+/* Contact */
+.contact-page {
+    margin-top:100px;
+    margin-left:3%;
+    margin-right: 55%;
+    line-height: 30px;
+}
+
+/* gallery pages */
+.gallery-headline {
+    margin-inline:1.5vw;
+    margin-bottom:3vw;
+    h2 {
+        font-family:"Alice";
+        font-size: calc(2vw + 20px);
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 60px;
+    margin-bottom: 100px;
+}
+
+.gallery-item {
+    width: 47vw;
+    height: 45vw;
+    margin-inline: auto;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.image-caption {
+    font-size: 14px;
+}
+
